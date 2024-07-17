@@ -8,14 +8,27 @@ namespace FizzBuzzAppTDD
 {
     public class FizzBuzz
     {
+        private readonly List<ICondition> _conditions;
+        public FizzBuzz()
+        {
+            _conditions = new List<ICondition>
+            {
+                new FizzBuzzCondition(),
+                new FizzCondition(),
+                new BuzzCondition()
+            };
+        }
+
         public string GetOutput(int number)
         {
-            if (number % 3 == 0 && number % 5 == 0)
-                return "FizzBuzz";
-            if (number % 3 == 0)
-                return "Fizz";
-            if (number % 5 == 0)
-                return "Buzz";
+            foreach (var condition in _conditions)
+            {
+                var result = condition.Apply(number);
+                if (!string.IsNullOrEmpty(result))
+                {
+                    return result;
+                }
+            }
 
             return number.ToString();
         }
