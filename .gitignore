@@ -2,8 +2,19 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/FizzBuzzAppTDD/FileContentIndex
-/.vs/FizzBuzzAppTDD/v17
-/FizzBuzzAppTDD/obj
-/FizzBuzzTests/bin/Debug/net6.0
-/FizzBuzzTests/obj
+
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+
+.vscode/
+
+[Dd]ebug/
+[Rr]elease/
+x64/
+bin/
+obj/
+/.vs/FizzBuzzAppTDD
